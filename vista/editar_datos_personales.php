@@ -42,10 +42,10 @@ if ($_SESSION['us_tipo'] == 1) {
                                     <p id="apellidos_us" class="text-muted text-center">Apellidos</p>
                                     <ul class="list-group list-group-unbordered mb-3">
                                         <li class="list-group-item">
-                                            <b style="color:#0B7300">Edad</b><a class="float-right">12</a>
+                                            <b style="color:#0B7300">Edad</b><a id="edad" class="float-right">12</a>
                                         </li>
                                         <li class="list-group-item">
-                                            <b style="color:#0B7300">DNI</b><a class="float-right">12</a>
+                                            <b style="color:#0B7300">DNI</b><a id="dni_us" class="float-right">12</a>
                                         </li>
                                         <li class="list-group-item">
                                             <b style="color:#0B7300">Tipo Usuario</b>
@@ -62,23 +62,23 @@ if ($_SESSION['us_tipo'] == 1) {
                                     <strong style="color:#0B7300">
                                         <i class="fas fa-phone mr-1"></i>Telefono
                                     </strong>
-                                    <p id='telefono_us' class="text-muted">---</p>
+                                    <p id='telefono_us' class="text-muted">42344234</p>
                                     <strong style="color:#0B7300">
                                         <i class="fas fa-map-marker-alt mr-1"></i>Residencia
                                     </strong>
-                                    <p id='residencia_us' class="text-muted">---</p>
+                                    <p id='residencia_us' class="text-muted">42344234</p>
                                     <strong style="color:#0B7300">
                                         <i class="fas fa-at mr-1"></i>Correo
                                     </strong>
-                                    <p id='correo_us' class="text-muted">---</p>
+                                    <p id='correo_us' class="text-muted">42344234</p>
                                     <strong style="color:#0B7300">
                                         <i class="fas fa-smile-wink mr-1"></i>sexo
                                     </strong>
-                                    <p id='sexo_us' class="text-muted">---</p>
+                                    <p id='sexo_us' class="text-muted">42344234</p>
                                     <strong style="color:#0B7300">
                                         <i class="fas fa-pencil-alt mr-1"></i>Informacion adicional
                                     </strong>
-                                    <p id='adicional_us' class="text-muted">----</p>
+                                    <p id='adicional_us' class="text-muted">42344234</p>
                                     <button class="btn btn-block bg-gradient-danger">Editar</button>
                                 </div>
                                 <div class="card-footer">
@@ -176,3 +176,4 @@ if ($_SESSION['us_tipo'] == 1) {
     header('Location: ../index.php');
 }
 ?>
+<script src="../js/Usuario.js"></script>
