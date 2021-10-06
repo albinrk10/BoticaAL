@@ -79,7 +79,7 @@ if ($_SESSION['us_tipo'] == 1) {
                                         <i class="fas fa-pencil-alt mr-1"></i>Informacion adicional
                                     </strong>
                                     <p id='adicional_us' class="text-muted">42344234</p>
-                                    <button class="btn btn-block bg-gradient-danger">Editar</button>
+                                    <button class="edit btn btn-block bg-gradient-danger">Editar</button>
                                 </div>
                                 <div class="card-footer">
                                     <p class="text-muted">click en boton si desea editar</p>
@@ -99,7 +99,16 @@ if ($_SESSION['us_tipo'] == 1) {
 
 
                                 <div class="card-body">
-                                    <form  class="form-horizontal">
+
+                                    <div class="alert alert-success text-center" id="editado" style='display:none;'>
+                                        <span><i class="fas fa-check m-1"></i>Editado</span>
+                                    </div>
+                                        <div class="alert alert-danger text-center" id="noeditado" style='display:none;'>
+                                                <span><i class="fas fa-times m-1"></i>Edicion deshabilitada</span>
+                                        </div>
+
+
+                                    <form id='form-usuario' class="form-horizontal">
                                         <div class="form-group row">
                                             <label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
                                             <div class="col-sm-10">
@@ -147,7 +156,7 @@ if ($_SESSION['us_tipo'] == 1) {
                                 </div>
 
                                 <div class="card-footer">
-                                <p class="text-muted">Cuidado con ingresar datos erroneos</p>
+                                  <p class="text-muted">Cuidado con ingresar datos erroneos</p>
 
 
                                 </div>
