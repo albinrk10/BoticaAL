@@ -8,6 +8,64 @@ if ($_SESSION['us_tipo'] == 1) {
     <?php
     include_once 'layouts/nav.php';
     ?>
+   <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="cambiocontra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cambiar password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+            <img src="../img/avatar.png" class="profile-user-img img-fluid img-circle">
+        </div>
+        <div class="text-center">
+            <b>
+                <?php
+                echo $_SESSION['nombre_us'];
+                ?>
+            </b>
+            
+        </div>
+        <div class="alert alert-success text-center" id="update" style='display:none;'>
+         <span><i class="fas fa-check m-1"></i>Se cambio password correctamente</span>
+        </div>
+            <div class="alert alert-danger text-center" id="noupdate" style='display:none;'>
+                <span><i class="fas fa-times m-1"></i>El password no es correcto</span>
+            </div>
+        <form id="form-pass">
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                   <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                </div>
+                <input id="oldpass" type="password" class="form-control" placeholder="Ingrese password actual">
+
+            </div>
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                   <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input id="newpass" type="text" class="form-control" placeholder="Ingrese password nueva">
+
+            </div>
+           
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn bg-gradient-primary">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -51,6 +109,8 @@ if ($_SESSION['us_tipo'] == 1) {
                                             <b style="color:#0B7300">Tipo Usuario</b>
                                             <span id="us_tipo" class="float-right badge badge-primary">Administrador</span>
                                         </li>
+                                        <button data-toggle="modal" data-target="#cambiocontra" type="button" class="btn btn-block btn-outline-warning btn-sm">Cambiar password</button>
+
                                     </ul>
                                 </div>
                             </div>
