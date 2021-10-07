@@ -81,6 +81,15 @@
               </p>
             </a>
           </li>
+          
+          <li class="nav-item">
+            <a href="adm_usuario.php" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+              Gestion usuario
+              </p>
+            </a>
+          </li>
 
 
 
