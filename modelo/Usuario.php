@@ -32,7 +32,7 @@ class Usuario{
         $query= $this->acceso->prepare($sql);
         $query->execute(array(':id'=>$id_usuario,':oldpass'=>$oldpass));
         $this->objetos= $query->fetchall();
-        
+
         if(!empty($this->objetos)){
             $sql="UPDATE usuario SET contrasena_us=:newpass WHERE id_usuario=:id";
             $query=$this->acceso->prepare($sql);
@@ -43,5 +43,18 @@ class Usuario{
             echo 'noupdate';
         }
     }
+    function cambiar_photo($id_usuario,$nombre){
+        $sql="SELECT avatar FROM usuario where id_usuario=:id";
+        $query= $this->acceso->prepare($sql);
+        $query->execute(array(':id'=>$id_usuario));
+        $this->objetos= $query->fetchall();
+    
+            $sql="UPDATE usuario SET avatar=:nombre WHERE id_usuario=:id";
+            $query=$this->acceso->prepare($sql);
+            $query->execute(array(':id'=>$id_usuario,':nombre'=>$nombre));
+            return $this->objetos;
+    }
+    
+
 }
 ?>

@@ -31,6 +31,7 @@ $(document).ready(function() {
          correo+=`${usuario.correo}`;
          sexo+=`${usuario.sexo}`;
          adicional+=`${usuario.adicional}`;
+         
 
          $('#nombre_us').html(nombre);
          $('#apellidos_us').html(apellidos);
@@ -42,6 +43,11 @@ $(document).ready(function() {
          $('#correo_us').html(correo);
          $('#sexo_us').html(sexo);
          $('#adicional_us').html(adicional);
+         $('#avatar2').attr('src', usuario.avatar);
+         $('#avatar1').attr('src', usuario.avatar);
+         $('#avatar3').attr('src', usuario.avatar);
+         $('#avatar4').attr('src', usuario.avatar);
+
 
        })
 
@@ -114,6 +120,37 @@ $(document).ready(function() {
     e.preventDefault();
 
 
+ })
+
+ $('#form-photo').submit(e=>{
+    let formData = new FormData($('#form-photo')[0]);
+    $.ajax({
+       url: '../controlador/UsuarioController.php',
+       type:'POST',
+       data:formData,
+       cache:false,
+       processData: false,
+       contentType: false
+    }).done(function(response){
+       const json = JSON.parse(response);
+       if(json.alert=='edit'){
+          $('#avatar1').attr('src',json.ruta);
+          $('#edit').hide('slow');
+          $('#edit').show(1000);
+          $('#edit').hide(2000);
+          $('#form-photo').trigger('reset');
+          buscar_usuario(id_usuario);
+       }
+       else{
+          $('#noedit').hide('slow');
+          $('#noedit').show(1000);
+          $('#noedit').hide(2000);
+          $('#form-photo').trigger('reset');
+          
+       }
+      
+    });
+    e.preventDefault(); 
  })
 
 
