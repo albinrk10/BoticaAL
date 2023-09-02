@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>login</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css "href="css/style.css">
     <link rel="stylesheet" type="text/css "href="css/css/all.min.css">
@@ -14,13 +14,14 @@ if(!empty($_SESSION['us_tipo'])){
     header('Location: controlador/LoginController.php');
 }
 else{
-    session_destroy();
+session_destroy();
+
 ?>
 <body>
-<img class="wave"src="img/wave.png" alt="">
+    <img class="wave"src="img/wave.png" alt="">
     <div class="contenedor">
         <div class="img">
-            <img src="img/bg.svg" alt="">
+            <img src="img/docto.svg" alt="">
         </div>
         <div class="contenido-login">
             <form action="controlador/LoginController.php" method="post">
@@ -32,7 +33,7 @@ else{
                     </div>
                     <div class="div">
                         <h5>DNI</h5>
-                        <input type="text" name="user" class="input">
+                        <input type="text" name="user" class="input" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -41,11 +42,11 @@ else{
                     </div>
                     <div class="div">
                         <h5>Contrasena</h5>
-                        <input type="password" name="pass" class="input">
+                        <input type="password" name="pass" class="input"required>
                     </div>
                 </div>
-                <!-- <a href="../vista/recuperar.php">recuperar password</a> -->
-                <a href="">Created Warpiece</a>
+                <a href="vista/recuperar.php"></a>
+                <a href=""></a>
                 <input type="submit" class="btn" value="iniciar Sesion">
             </form>
         </div>
