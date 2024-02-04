@@ -33,5 +33,6 @@ contra: 1234
 
 **❖ Step 3:**
 
+![1701324694874](https://github.com/albinrk10/BoticaAL/assets/79820950/94e844d3-d40a-4a09-9871-28719aa7135c)
 
 
